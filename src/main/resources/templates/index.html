@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>FizzBuzz</title>
+</head>
+<body>
+    <form th:action="@{/fizzbuzz}">
+        <input type="number" min="1" max="10000000" th:name="last"/>
+        <input type="submit" />
+    </form>
+    <div th:if="${error != null}">
+        <p th:text="${error}"></p>
+    </div>
+    <div th:if="${sequence != null}">
+        <h1>Result</h1>
+        <ul>
+            <li th:each="item : ${sequence}" th:text="${item}"></li>
+        </ul>
+    </div>
+</body>
+</html>
