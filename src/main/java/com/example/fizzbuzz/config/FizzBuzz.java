@@ -9,6 +9,7 @@ import java.math.BigInteger;
 // Since I don't need to change the values right now, and there is no specification how should it be done in the future, I chose an enum for it.
 // I'd personally make the values settable on the front-end, and the enum fields could get a setter as well, so it wouldn't require a big refactoring.
 
+// I had to decide between flexibility and divisor rules, and I chose the former, because I found flexibility more valuable.
 @Getter
 public enum FizzBuzz {
     FIZZ("Fizz", 3),
