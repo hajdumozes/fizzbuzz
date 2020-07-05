@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>FizzBuzz</title>
+</head>
+<body>
+<div class="container">
+    <p class="text-center font-weight-bolder" style="font-size: 18pt">Rules:</p>
+    <p class="text-center font-weight-lighter">The following app counts from 1 to the given number. If the number is a multiple of 3, it prints "Fizz". If it's a multiple of 5, it prints "Buzz."</p>
+    <form action="/fizzbuzz" class="input-group shadow-none p-3 mb-5 bg-light rounded" id="fizzbuzz-form">
+        <input type="number" min="1" max="10000000" name="last" class="form-control" placeholder="Last element of sequence" required/>
+        <input type="submit" value="Calculate"/>
+    </form>
+</div>
+<div id="result-container" class="container" style="visibility:hidden;">
+    <p class="text-center font-weight-bolder" style="font-size: 18pt">Result:</p>
+    <ul class="list-group list-group-flush" id="result-list"></ul>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

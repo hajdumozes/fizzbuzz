@@ -40,27 +40,19 @@ public class FizzBuzzControllerTest {
     @Test
     public void getSequence_whenParameterIsNegativeNumber_thenItProvidesErrorAttribute() throws Exception {
         this.mockMvc.perform(get("/fizzbuzz").param("last", "-30"))
-                .andExpect(status().isOk())
-                .andExpect(model().attributeExists("error"))
-                .andExpect(model().attributeDoesNotExist("sequence"))
-                .andExpect(view().name("index"));
+                .andExpect(status().isBadRequest());
     }
 
     @Test
     public void getSequence_whenParameterIsZero_thenItProvidesErrorAttribute() throws Exception {
         this.mockMvc.perform(get("/fizzbuzz").param("last", "0"))
-                .andExpect(status().isOk())
-                .andExpect(model().attributeExists("error"))
-                .andExpect(model().attributeDoesNotExist("sequence"))
-                .andExpect(view().name("index"));
+                .andExpect(status().isBadRequest());
     }
 
     @Test
     public void getSequence_whenParameterIsPositiveNumber_thenItProvidesSequenceAttribute() throws Exception {
         this.mockMvc.perform(get("/fizzbuzz").param("last", "100"))
-                .andExpect(status().isOk())
-                .andExpect(model().attributeExists("sequence"))
-                .andExpect(view().name("index"));
+                .andExpect(status().isOk());
     }
 
 }
